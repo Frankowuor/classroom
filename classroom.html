@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Enhanced Registration Form</title>
+  <style>
+    /* ----------- General Page Styles ----------- */
+    body {
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f9f6f6;
+      margin: 0;
+      padding: 0;
+      color: #333;
+    }
+
+    header {
+      background-color: maroon;
+      color: white;
+      text-align: center;
+      padding: 1.5rem 0;
+    }
+
+    main {
+      max-width: 800px;
+      margin: 2rem auto;
+      background: white;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    h1, h2 {
+      color: maroon;
+    }
+
+    hr {
+      border: 1px solid maroon;
+      margin: 1.5rem 0;
+    }
+
+    form {
+      display: grid;
+      gap: 1rem;
+    }
+
+    fieldset {
+      border: 1px solid maroon;
+      border-radius: 8px;
+      padding: 1rem;
+    }
+
+    legend {
+      color: maroon;
+      font-weight: bold;
+    }
+
+    label {
+      font-weight: 600;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 0.6rem;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 1rem;
+      margin-top: 0.4rem;
+    }
+
+    input:focus, select:focus, textarea:focus {
+      border-color: maroon;
+      outline: none;
+      box-shadow: 0 0 3px maroon;
+    }
+
+    input[type="submit"] {
+      background-color: maroon;
+      color: white;
+      border: none;
+      cursor: pointer;
+      font-weight: bold;
+      padding: 0.8rem;
+      border-radius: 6px;
+      transition: background-color 0.3s ease;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #800000; /* Darker maroon */
+    }
+
+    /* ----------- Table Styling ----------- */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1rem;
+    }
+
+    th, td {
+      border: 1px solid #ccc;
+      padding: 0.75rem;
+      text-align: left;
+    }
+
+    th {
+      background-color: maroon;
+      color: white;
+    }
+
+    tr:nth-child(even) {
+      background-color: #f9f2f2;
+    }
+
+    /* ----------- Footer Styling ----------- */
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background-color: maroon;
+      color: white;
+      margin-top: 2rem;
+      border-top-left-radius: 12px;
+      border-top-right-radius: 12px;
+    }
+
+    video {
+      border-radius: 8px;
+      border: 2px solid maroon;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>Student Registration Portal</h1>
+    <p>Welcome! Please fill in your details below.</p>
+  </header>
+
+  <main>
+    <section>
+      <h2>About This Form</h2>
+      <ul>
+        <li>Helps you register for the university database.</li>
+        <li>Ensures accurate contact and course information.</li>
+        <li>Enables faster communication and verification.</li>
+      </ul>
+    </section>
+
+    <hr>
+
+    <section>
+      <h2>Registration Form</h2>
+      <form action="#" method="post" autocomplete="on">
+        <!-- Personal Details -->
+        <fieldset>
+          <legend>Personal Details</legend>
+
+          <label for="fullname">Full Name:</label>
+          <input type="text" id="fullname" name="fullname" placeholder="Enter your full name" required>
+
+          <label for="email">Email Address:</label>
+          <input type="email" id="email" name="email" placeholder="example@email.com" required>
+
+          <label for="phone">Phone Number:</label>
+          <input type="tel" id="phone" name="phone" placeholder="+254700000000" pattern="[+0-9]{10,15}" required>
+
+          <label for="dob">Date of Birth:</label>
+          <input type="date" id="dob" name="dob" required>
+
+          <label for="gender">Gender:</label>
+          <select id="gender" name="gender" required>
+            <option value="">--Select Gender--</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+            <option value="Other">Other</option>
+          </select>
+        </fieldset>
+
+        <!-- Academic Details -->
+        <fieldset>
+          <legend>Academic Details</legend>
+
+          <label for="studentid">Student ID (Read-Only):</label>
+          <input type="text" id="studentid" name="studentid" value="AUTO2025" readonly>
+
+          <label for="course">Course Name:</label>
+          <input type="text" id="course" name="course" placeholder="e.g. Business Information Technology" required>
+
+          <label for="year">Year of Study:</label>
+          <input type="number" id="year" name="year" min="1" max="4" required>
+
+          <label for="interests">Areas of Interest:</label>
+          <textarea id="interests" name="interests" placeholder="List your interests here..." rows="3"></textarea>
+        </fieldset>
+
+        <!-- Upload & Consent -->
+        <fieldset>
+          <legend>Upload & Consent</legend>
+
+          <label for="photo">Upload Passport Photo:</label>
+          <input type="file" id="photo" name="photo" accept="image/*" required>
+
+          <label>
+            <input type="checkbox" name="terms" required>
+            I agree to the <a href="#" style="color: maroon;">terms and conditions</a>.
+          </label>
+        </fieldset>
+
+        <input type="submit" value="Submit Registration">
+      </form>
+    </section>
+
+    <hr>
+
+    <section>
+      <h2>Sample Student Data</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Student Name</th>
+            <th>Course</th>
+            <th>Year</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Mary Wanjiku</td>
+            <td>Computer Science</td>
+            <td>2</td>
+            <td>Active</td>
+          </tr>
+          <tr>
+            <td>John Omondi</td>
+            <td>Business Information Tech</td>
+            <td>3</td>
+            <td>Active</td>
+          </tr>
+          <tr>
+            <td>Faith Chebet</td>
+            <td>Software Engineering</td>
+            <td>1</td>
+            <td>Pending</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section>
+      <h2>Our Campus Video Tour</h2>
+      <video controls width="100%" poster="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=800&q=80">
+        <source src="campus-tour.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Kabarak University | Designed with by OMONDI FRANCLINE</p>
+  </footer>
+</body>
+</html>
